@@ -33,7 +33,7 @@ const Header = () => (
         <LinkStyled to="/">
           <LogoStyled src="/img/logo.svg" alt="Авито.Недвижимость" />
         </LinkStyled>
-        <Button contained tag="a" color="primary" href="http://google.com">GitHub</Button>
+        <Button as="a" href="http://google.com">GitHub</Button>
       </WrapStyled>
     </Container>
   </HeaderStyled>
