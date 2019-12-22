@@ -6,16 +6,12 @@ import styled from 'styled-components';
 import Paragraph from '../Components/Paragraph';
 import Title from '../Components/Title';
 import Loader from '../Components/Loader';
+import Slider from '../Components/Slider';
 
 
 const MainStyled = styled.main`
   padding-top: 32px;
   padding-bottom: 32px;
-`;
-
-const ImageStyled = styled.img`
-  width: 100%;
-  margin-bottom: 16px;
 `;
 
 const ItemPage = () => {
@@ -42,9 +38,7 @@ const ItemPage = () => {
             <Paragraph>{item.description}</Paragraph>
           </Col>
           <Col lg={6}>
-            {(item.images !== undefined) && item.images.map((image, index) => (
-              <ImageStyled key={index} src={image} />
-            ))}
+            <Slider items={item.images} />
           </Col>
         </Row>
       </Container>
