@@ -2,10 +2,10 @@ import React, { Fragment } from 'react';
 import Header from '../Components/Header';
 
 
-const MainLayout = (props) => (
+const MainLayout = ({ children }) => (
   <Fragment>
     <Header />
-    { props.children }
+    { children }
   </Fragment>
 );
 

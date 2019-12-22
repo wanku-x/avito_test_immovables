@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 const Button = styled.button`
   display: inline-block;
   padding: 8px 16px;
@@ -16,7 +15,6 @@ const Button = styled.button`
 
   &:hover, &:focus {
     background-color: #0076c6;
-    transition: 0.2s ease-out 0s;
   }
 `;
 

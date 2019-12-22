@@ -1,10 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { setConfiguration } from 'react-grid-system';
 import ListPage from './Pages/ListPage';
 import ItemPage from './Pages/ItemPage';
 import NotFoundPage from './Pages/NotFoundPage';
 import MainLayout from './Layouts/MainLayout.js';
 
+
+setConfiguration({ gutterWidth: 16 });
 
 const App = () => (
   <Router>
