@@ -83,7 +83,7 @@ ButtonStyled.propTypes = {
   length: PropTypes.number.isRequired,
 };
 
-const Slider = ({ items = [] }) => {
+const Slider = ({ items }) => {
   const [shift, setShift] = useState(0);
 
   const prev = () => (
@@ -121,7 +121,11 @@ const Slider = ({ items = [] }) => {
 };
 
 Slider.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  items: PropTypes.arrayOf(PropTypes.string),
+};
+
+Slider.defaultProps = {
+  items: [],
 };
 
 export default Slider;
