@@ -1,7 +1,14 @@
 import React from 'react';
+import { Container } from 'react-grid-system';
+import { Title } from '../Components/Typo';
+import Main from '../Components/Main';
 
 const NotFoundPage = () => (
-  <h1>Not Found!</h1>
+  <Main>
+    <Container>
+      <Title>Страница не найдена :(</Title>
+    </Container>
+  </Main>
 );
 
 export default NotFoundPage;

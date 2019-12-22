@@ -4,12 +4,7 @@ import styled from 'styled-components';
 import requestGET from '../Requests';
 import Card from '../Components/Card';
 import Loader from '../Components/Loader';
-
-
-const MainStyled = styled.main`
-  padding-top: 32px;
-  padding-bottom: 32px;
-`;
+import Main from '../Components/Main';
 
 const ColStyled = styled(Col)`
   padding-bottom: 32px;
@@ -31,7 +26,7 @@ const ListPage = () => {
   });
 
   return (
-    <MainStyled>
+    <Main>
       <Container>
         <Row>
           {immovables.map((item) => (
@@ -48,7 +43,7 @@ const ListPage = () => {
         </Row>
       </Container>
       <Loader visible={loading} />
-    </MainStyled>
+    </Main>
   );
 };
 

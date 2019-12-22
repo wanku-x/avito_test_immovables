@@ -10,9 +10,9 @@ const HeaderStyled = styled.header`
 
 const WrapStyled = styled.div`
   display: flex;
-  min-height: 70px;
   justify-content: space-between;
   align-items: center;
+  min-height: 70px;
 `;
 
 const LogoStyled = styled.img`
@@ -32,7 +32,7 @@ const Header = () => (
         <LinkStyled to="/">
           <LogoStyled src="/img/logo.svg" alt="Авито.Недвижимость" />
         </LinkStyled>
-        <Button as="a" href="http://google.com">GitHub</Button>
+        <Button as="a" href="https://github.com/wanku-x/avito_test_immovables">GitHub</Button>
       </WrapStyled>
     </Container>
   </HeaderStyled>

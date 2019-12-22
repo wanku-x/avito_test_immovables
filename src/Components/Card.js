@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import { Subtitle, Paragraph, Price } from './Typo';
 
 const CardStyled = styled(Link)`
-  height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
   box-shadow: 0 0 6px 1px rgba(64, 64, 64, 0.1);
   text-decoration: none;
   color: inherit;
@@ -19,18 +19,18 @@ const CardStyled = styled(Link)`
 `;
 
 const ImageStyled = styled.img`
-  width: 100%;
   flex-shrink: 0;
+  width: 100%;
 `;
 
 const BodyStyled = styled.div`
-  padding: 16px 16px 0;
   flex-grow: 1;
+  padding: 16px 16px 0;
 `;
 
 const PriceStyled = styled(Price)`
-  padding: 8px 16px 16px;
   flex-shrink: 0;
+  padding: 8px 16px 16px;
 `;
 
 const Card = ({

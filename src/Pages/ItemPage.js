@@ -11,12 +11,7 @@ import {
 } from '../Components/Typo';
 import Loader from '../Components/Loader';
 import Slider from '../Components/Slider';
-
-
-const MainStyled = styled.main`
-  padding-top: 32px;
-  padding-bottom: 32px;
-`;
+import Main from '../Components/Main';
 
 const InfoStyled = styled.div`
   padding-top: 16px;
@@ -40,7 +35,7 @@ const ItemPage = () => {
   });
 
   return (
-    <MainStyled>
+    <Main>
       <Container>
         <Title>{item.title}</Title>
         <Row>
@@ -58,7 +53,7 @@ const ItemPage = () => {
         </Row>
       </Container>
       <Loader visible={loading} />
-    </MainStyled>
+    </Main>
   );
 };
 

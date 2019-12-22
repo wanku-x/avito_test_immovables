@@ -48,6 +48,7 @@ const ImageStyled = styled.img`
 
 const ButtonStyled = styled.button`
   position: absolute;
+  top: 50%;
   width: 64px;
   height: 64px;
   border: none;
@@ -56,7 +57,6 @@ const ButtonStyled = styled.button`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 20px auto;
-  top: 50%;
   transform: translateY(-50%);
   transition: 0.2s ease-out 0s;
   cursor: pointer;

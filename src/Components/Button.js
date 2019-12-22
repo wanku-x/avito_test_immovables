@@ -5,13 +5,14 @@ const Button = styled.button`
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
-  transition: 0.2s ease-out 0s;
+  background-color: #00aaff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 500;
   cursor: pointer;
-  background-color: #00aaff;
   color: #fff;
+  transition: 0.2s ease-out 0s;
 
   &:hover, &:focus {
     background-color: #0076c6;
