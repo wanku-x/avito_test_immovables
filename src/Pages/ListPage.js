@@ -13,16 +13,24 @@ const ColStyled = styled(Col)`
 const ListPage = () => {
   const [loading, setLoading] = useState(true);
   const [immovables, setImmovables] = useState([]);
+  const abortController = new AbortController();
 
   useEffect(() => {
-    requestGET('http://134.209.138.34/items/').then((res) => {
-      setImmovables(res);
-    }).catch((err) => {
-      // eslint-disable-next-line no-console
-      console.log(err);
-    }).finally(() => {
-      setLoading(false);
-    });
+    requestGET('http://134.209.138.34/items/', { signal: abortController.signal })
+      .then((res) => {
+        setImmovables(res);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+
+    return () => {
+      abortController.abort();
+    };
   });
 
   return (

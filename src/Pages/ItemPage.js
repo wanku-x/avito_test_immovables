@@ -15,22 +15,31 @@ import Main from '../Components/Main';
 
 const InfoStyled = styled.div`
   padding-top: 16px;
+  padding-bottom: 32px;
 `;
 
 const ItemPage = () => {
   const [loading, setLoading] = useState(true);
   const [item, setItem] = useState({});
   const { id } = useParams();
+  const abortController = new AbortController();
 
   useEffect(() => {
-    requestGET(`http://134.209.138.34/item/${id}/`).then((res) => {
-      setItem(res[0]);
-    }).catch((err) => {
-      // eslint-disable-next-line no-console
-      console.log(err);
-    }).finally(() => {
-      setLoading(false);
-    });
+    requestGET(`http://134.209.138.34/item/${id}/`, { signal: abortController.signal })
+      .then((res) => {
+        setItem(res[0]);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+
+    return () => {
+      abortController.abort();
+    };
   });
 
   return (
