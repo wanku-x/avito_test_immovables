@@ -3,8 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-grid-system';
 import { requestGET } from '../Requests';
 import styled from 'styled-components';
-import Paragraph from '../Components/Paragraph';
-import Title from '../Components/Title';
+import { Title, Paragraph, Subtitle, Price } from '../Components/Typo';
 import Loader from '../Components/Loader';
 import Slider from '../Components/Slider';
 
@@ -12,6 +11,11 @@ import Slider from '../Components/Slider';
 const MainStyled = styled.main`
   padding-top: 32px;
   padding-bottom: 32px;
+`;
+
+const InfoStyled = styled.div`
+  padding-top: 16px;
+  text-align: right;
 `;
 
 const ItemPage = () => {
@@ -39,6 +43,11 @@ const ItemPage = () => {
           </Col>
           <Col lg={6}>
             <Slider items={item.images} />
+            <InfoStyled>
+              <Subtitle>{item.sellerName}</Subtitle>
+              <Paragraph>{item.address}</Paragraph>
+              <Price>{item.price}</Price>
+            </InfoStyled>
           </Col>
         </Row>
       </Container>
