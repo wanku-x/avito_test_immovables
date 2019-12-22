@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from './Button';
 
-
 const HeaderStyled = styled.header`
   box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.1);
 `;

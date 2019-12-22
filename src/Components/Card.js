@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Subtitle, Paragraph, Price } from './Typo';
 import styled from 'styled-components';
-
+import { Subtitle, Paragraph, Price } from './Typo';
 
 const CardStyled = styled(Link)`
   height: 100%;
@@ -33,9 +33,15 @@ const PriceStyled = styled(Price)`
   flex-shrink: 0;
 `;
 
-const Card = ({ id, address, title, previewImage, price }) => (
+const Card = ({
+  id,
+  address,
+  title,
+  previewImage,
+  price,
+}) => (
   <CardStyled to={`/${id}/`}>
-    <ImageStyled src={ previewImage } />
+    <ImageStyled src={previewImage} />
     <BodyStyled>
       <Subtitle>{ title }</Subtitle>
       <Paragraph>{ address }</Paragraph>
@@ -43,5 +49,13 @@ const Card = ({ id, address, title, previewImage, price }) => (
     <PriceStyled>{ price }</PriceStyled>
   </CardStyled>
 );
+
+Card.propTypes = {
+  id: PropTypes.number.isRequired,
+  address: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  previewImage: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+};
 
 export default Card;

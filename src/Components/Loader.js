@@ -38,20 +38,20 @@ const Portal = ({ children }) => {
     document.body.appendChild(portal);
     return () => {
       document.body.removeChild(portal);
-    }
+    };
   });
 
-  return ReactDOM.createPortal(children, portal)
+  return ReactDOM.createPortal(children, portal);
 };
 
-const Loader = ({ visible }) => {
-  return visible && (
+const Loader = ({ visible }) => (
+  visible && (
     <Portal>
       <Overlay>
         <Spinner />
       </Overlay>
     </Portal>
   )
-};
+);
 
 export default Loader;

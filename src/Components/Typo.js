@@ -31,4 +31,9 @@ const Price = styled.div`
   color: #0076c6;
 `;
 
-export { Title, Subtitle, Paragraph, Price };
+export {
+  Title,
+  Subtitle,
+  Paragraph,
+  Price,
+};

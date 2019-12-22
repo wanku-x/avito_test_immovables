@@ -4,8 +4,7 @@ import { setConfiguration } from 'react-grid-system';
 import ListPage from './Pages/ListPage';
 import ItemPage from './Pages/ItemPage';
 import NotFoundPage from './Pages/NotFoundPage';
-import MainLayout from './Layouts/MainLayout.js';
-
+import MainLayout from './Layouts/MainLayout';
 
 setConfiguration({ gutterWidth: 16 });
 

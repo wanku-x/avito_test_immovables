@@ -1,12 +1,17 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Header from '../Components/Header';
 
 
 const MainLayout = ({ children }) => (
-  <Fragment>
+  <>
     <Header />
     { children }
-  </Fragment>
+  </>
 );
+
+MainLayout.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 export default MainLayout;
