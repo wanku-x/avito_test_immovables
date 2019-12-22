@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Subtitle, Paragraph, Price } from './Typo';
 import styled from 'styled-components';
 
 
@@ -27,32 +28,17 @@ const BodyStyled = styled.div`
   flex-grow: 1;
 `;
 
-const PriceStyled = styled.div`
+const PriceStyled = styled(Price)`
   padding: 8px 16px 16px;
   flex-shrink: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #0076c6;
-`;
-
-const TitleStyled = styled.h3`
-  margin-top: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 1.2rem;
-`;
-
-const AddressStyled = styled.p`
-  font-size: 0.9rem;
 `;
 
 const Card = ({ id, address, title, previewImage, price }) => (
   <CardStyled to={`/${id}/`}>
     <ImageStyled src={ previewImage } />
     <BodyStyled>
-      <TitleStyled>{ title }</TitleStyled>
-      <AddressStyled>{ address }</AddressStyled>
+      <Subtitle>{ title }</Subtitle>
+      <Paragraph>{ address }</Paragraph>
     </BodyStyled>
     <PriceStyled>{ price }</PriceStyled>
   </CardStyled>
