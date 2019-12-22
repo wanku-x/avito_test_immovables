@@ -15,7 +15,6 @@ import Main from '../Components/Main';
 
 const InfoStyled = styled.div`
   padding-top: 16px;
-  text-align: right;
 `;
 
 const ItemPage = () => {
@@ -40,15 +39,15 @@ const ItemPage = () => {
         <Title>{item.title}</Title>
         <Row>
           <Col lg={6}>
-            <Paragraph>{item.description}</Paragraph>
-          </Col>
-          <Col lg={6}>
             <Slider items={item.images} />
             <InfoStyled>
               <Subtitle>{item.sellerName}</Subtitle>
               <Paragraph>{item.address}</Paragraph>
               <Price>{item.price}</Price>
             </InfoStyled>
+          </Col>
+          <Col lg={6}>
+            <Paragraph>{item.description}</Paragraph>
           </Col>
         </Row>
       </Container>
