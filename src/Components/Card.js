@@ -43,7 +43,7 @@ const Card = ({
   <CardStyled to={`/${id}/`}>
     <ImageStyled src={previewImage} />
     <BodyStyled>
-      <Subtitle>{ title }</Subtitle>
+      <Subtitle as="h3">{ title }</Subtitle>
       <Paragraph>{ address }</Paragraph>
     </BodyStyled>
     <PriceStyled>{ price }</PriceStyled>

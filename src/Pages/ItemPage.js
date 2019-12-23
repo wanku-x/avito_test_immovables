@@ -48,12 +48,12 @@ const ItemPage = () => {
   return (
     <Main>
       <Container>
-        <Title>{item.title}</Title>
+        <Title as="h1">{item.title}</Title>
         <Row>
           <Col lg={6}>
             {!loading && !error && <Slider items={item.images} />}
             <InfoStyled>
-              <Subtitle>{item.sellerName}</Subtitle>
+              <Subtitle as="h3">{item.sellerName}</Subtitle>
               <Paragraph>{item.address}</Paragraph>
               <Price>{item.price}</Price>
             </InfoStyled>
