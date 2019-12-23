@@ -25,7 +25,7 @@
 ### Запуск в режиме разработки
 
 ```bash
-git clone https://github.com/wanku-x/avito_test_immovable.git
+git clone https://github.com/wanku-x/avito_test_immovables.git
 cd avito_test
 npm i
 npm start
@@ -34,7 +34,7 @@ npm start
 ### Сборка проекта
 
 ```bash
-git clone https://github.com/wanku-x/avito_test_immovable.git
+git clone https://github.com/wanku-x/avito_test_immovables.git
 cd avito_test
 npm i
 npm run build
