@@ -69,8 +69,8 @@ const ButtonStyled = styled.button`
     right: 8px;
     background-image: url('/img/next.svg');
   `}
-  ${({ variant, shift }) => (variant === 'prev') && (shift === 0) && 'display: none;'}
-  ${({ variant, shift, length }) => (variant === 'next') && (shift === length - 1) && 'display: none;'}
+  ${({ variant, shift }) => (variant === 'prev') && (shift <= 0) && 'display: none;'}
+  ${({ variant, shift, length }) => (variant === 'next') && (shift >= length - 1) && 'display: none;'}
 
   &:hover {
     background-color: rgba(256, 256, 256, 0.6);
