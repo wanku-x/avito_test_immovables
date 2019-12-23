@@ -22,9 +22,10 @@ const ItemPage = () => {
   const [loading, setLoading] = useState(true);
   const [item, setItem] = useState({});
   const { id } = useParams();
-  const abortController = new AbortController();
 
   useEffect(() => {
+    const abortController = new AbortController();
+
     requestGET(`http://134.209.138.34/item/${id}/`, { signal: abortController.signal })
       .then((res) => {
         setItem(res[0]);
@@ -40,7 +41,7 @@ const ItemPage = () => {
     return () => {
       abortController.abort();
     };
-  });
+  }, [id]);
 
   return (
     <Main>
