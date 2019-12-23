@@ -22,6 +22,7 @@ const InfoStyled = styled.div`
 const ItemPage = () => {
   const [loading, setLoading] = useState(true);
   const [item, setItem] = useState({});
+  const [error, setError] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -32,6 +33,7 @@ const ItemPage = () => {
         setItem(res[0]);
       })
       .catch(() => {
+        setError(true);
         notification('Ошибка соединения с сервером. Попробуйте позже.');
       })
       .finally(() => {
@@ -49,7 +51,7 @@ const ItemPage = () => {
         <Title>{item.title}</Title>
         <Row>
           <Col lg={6}>
-            <Slider items={item.images} />
+            {!loading && !error && <Slider items={item.images} />}
             <InfoStyled>
               <Subtitle>{item.sellerName}</Subtitle>
               <Paragraph>{item.address}</Paragraph>
