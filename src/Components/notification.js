@@ -6,7 +6,7 @@ const notification = (text) => {
   Notification.newInstance({}, (n) => {
     n.notice({
       content: <span>{ text }</span>,
-      duration: null,
+      duration: 3,
     });
   });
 };
