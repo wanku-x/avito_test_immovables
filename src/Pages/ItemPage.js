@@ -12,6 +12,7 @@ import {
 import Loader from '../Components/Loader';
 import Slider from '../Components/Slider';
 import Main from '../Components/Main';
+import notification from '../Components/notification';
 
 const InfoStyled = styled.div`
   padding-top: 16px;
@@ -30,9 +31,8 @@ const ItemPage = () => {
       .then((res) => {
         setItem(res[0]);
       })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.log(err);
+      .catch(() => {
+        notification('Ошибка соединения с сервером. Попробуйте позже.');
       })
       .finally(() => {
         setLoading(false);

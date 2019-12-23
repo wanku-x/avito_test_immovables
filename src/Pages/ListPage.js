@@ -5,6 +5,7 @@ import requestGET from '../Requests';
 import Card from '../Components/Card';
 import Loader from '../Components/Loader';
 import Main from '../Components/Main';
+import notification from '../Components/notification';
 
 const ColStyled = styled(Col)`
   padding-bottom: 32px;
@@ -21,9 +22,8 @@ const ListPage = () => {
       .then((res) => {
         setImmovables(res);
       })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.log(err);
+      .catch(() => {
+        notification('Ошибка соединения с сервером. Попробуйте позже.');
       })
       .finally(() => {
         setLoading(false);
@@ -32,7 +32,7 @@ const ListPage = () => {
     return () => {
       abortController.abort();
     };
-  });
+  }, []);
 
   return (
     <Main>
